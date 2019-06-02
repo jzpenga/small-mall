@@ -1,0 +1,83 @@
+<p-nav back title="商品详情" />
+<view class='goodsContainer' style='margin-top:{{navH}}px'>
+  <swiper class="goodsimgs" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+    <swiper-item wx:for="{{gallery}}" wx:key="{{item}}">
+      <image src="{{item}}" background-size="cover"></image>
+    </swiper-item>
+  </swiper>
+  <view class="service-policy">
+    <view class="item">30天无忧退货</view>
+    <view class="item">48小时快速退款</view>
+    <view class="item">满88元免邮费</view>
+  </view>
+  <view class="goods-info">
+    <view class="c">
+      <text class="name">{{goods.name}}</text>
+      <text class="desc">{{goods.subtitle}}</text>
+      <text class="specs">{{goods.specs}}</text>
+      <text class="price">￥{{goods.price}}</text>
+    </view>
+  </view>
+  <view class="section-nav section-attr" bindtap="switchAttrPop">
+    <view class="t">请选择数量</view>
+    <image class="i" src="../../static/images/address_right.png" background-size="cover"></image>
+  </view>
+  <view class="detail-attr">
+    <view class="t">图文详情</view>
+  </view>
+
+  <view class="detail">
+    <import src="../../lib/wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:goodsDetail.nodes}}" />
+  </view>
+
+  <view class="bottom-space">
+  </view>
+
+</view>
+<view class="attr-pop-box" hidden="{{!openAttr}}">
+  <view class="attr-pop">
+    <view class="close" bindtap="closeAttr">
+      <image class="icon" src="/static/images/icon_close.png"></image>
+    </view>
+    <view class="img-info">
+      <image class="img" src="{{goods.mainImage}}"></image>
+      <view class="info">
+        <view class="c">
+          <view class="p">价格：￥{{goods.price}}</view>
+          <view class="a" wx:if="{{productList.length>0}}">已选择：{{checkedSpecText}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="spec-con">
+      <view class="spec-item" wx:for="{{specificationList}}" wx:key="{{item.specification_id}}">
+        <view class="name">{{item.name}}</view>
+        <view class="values">
+          <view class="value {{vitem.checked ? 'selected' : ''}}" bindtap="clickSkuValue" wx:for="{{item.valueList}}" wx:for-item="vitem" wx:key="{{vitem.id}}" data-value-id="{{vitem.id}}" data-name-id="{{vitem.specification_id}}">{{vitem.value}}</view>
+        </view>
+      </view>
+
+      <view class="number-item">
+        <view class="name">数量</view>
+        <view class="selnum">
+          <view class="cut" bindtap="cutNumber">-</view>
+          <input value="{{number}}" class="number" disabled="true" type="number" />
+          <view class="add" bindtap="addNumber">+</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="bottom-btn">
+  <view class="l l-collect" bindtap="addCannelCollect">
+    <image class="icon" src="{{ collectBackImage }}"></image>
+  </view>
+  <view class="l l-cart">
+    <view class="box">
+      <text class="cart-count">{{cartGoodsCount}}</text>
+      <image bindtap="openCartPage" class="icon" src="/static/images/ic_menu_shoping_nor.png"></image>
+    </view>
+  </view>
+  <view class="c">立即购买</view>
+  <view class="r" bindtap="addToCart">加入购物车</view>
+</view>

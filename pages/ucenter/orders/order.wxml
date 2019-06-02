@@ -1,0 +1,40 @@
+    
+<!--pages/orders/order.wxml-->
+<p-nav  back title='订单'/>
+<view style="margin-top:{{navH}}px">
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{item.index==TabCur?'text-primary cur':''}}" wx:for="{{tabList}}" wx:key bindtap="tabSelect" data-id="{{item.index}}">
+      {{item.name}}
+    </view>
+  </view>
+</scroll-view>
+
+<view >
+    <view class="orders">
+        <navigator url="../orderDetail/orderDetail?id={{item.id}}" class="order" wx:for="{{orderList}}" wx:key="{{item.id}}">
+            <view class="h">
+                <view class="l">订单编号：{{item.orderNo}}</view>
+                <view class="r">{{item.status === 0?'待付款':item.status === 2?'待收货':item.status === 3?'待评价':''}}</view>
+            </view>
+            <view class="goods" wx:for="{{item.userOrderItems}}" wx:key="{{gitem.id}}" wx:for-item="gitem">
+                <view class="img">
+                    <image src="{{gitem.product.mainImage}}"></image>
+                </view>
+                <view class="info">
+                    <text class="name">{{gitem.product.name}}</text>
+                    <text class="number">共{{gitem.quantity}}件商品</text>
+                </view>
+                <view class="status"></view>
+            </view>
+            <view class="b">
+                <view class="l">实付：￥{{item.payment}}</view>
+                <view class="r">
+                    <button class="btn" data-order-index="{{index}}" catchtap="payOrder" wx:if="{{item.status===0}}">去付款</button>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>
+
+</view>

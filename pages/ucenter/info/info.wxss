@@ -1,0 +1,4 @@
+/* pages/index/index.wxss */
+.avatar-item{
+  margin-bottom: 20rpx;
+}

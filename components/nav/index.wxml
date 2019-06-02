@@ -1,0 +1,8 @@
+<view class='nav bg-primary' style='height:{{navH}}px'>
+    <view class='nav-title'>
+      {{title}}
+    </view>
+    <image wx:if="{{back}}" src='../../static/images/nav-back.svg' mode='aspectFit' class='back' bindtap='_navBack'></image> 
+    <image wx:if="{{menu}}" src='../../static/images/nav-menu.svg' mode='aspectFit' class='back' bindtap='_onMenuClick'></image> 
+
+  </view>

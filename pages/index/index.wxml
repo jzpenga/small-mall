@@ -1,0 +1,49 @@
+<!-- <shuichan wx:if="{{PageCur=='shuichan'}}"></shuichan>
+<rouqin wx:if="{{PageCur=='rouqin'}}"></rouqin>
+<baokuan wx:if="{{PageCur=='baokuan'}}"></baokuan>
+<guoshu wx:if="{{PageCur=='guoshu'}}"></guoshu>
+<sushi wx:if="{{PageCur=='sushi'}}"></sushi> -->
+<shuichan categoryParentId='5'  style="display:{{PageCur=='shuichan'?'block':'none'}}"></shuichan>
+<rouqin categoryParentId='6' style="display:{{PageCur=='rouqin'?'block':'none'}}"></rouqin>
+<baokuan  style="display:{{PageCur=='baokuan'?'block':'none'}}"></baokuan>
+<guoshu categoryParentId='1'  style="display:{{PageCur=='guoshu'?'block':'none'}}"></guoshu>
+<sushi categoryParentId='7' style="display:{{PageCur=='sushi'?'block':'none'}}"></sushi>
+<view class="cu-bar tabbar bg-white shadow foot">
+<!-- 水产 -->
+  <view class="action" bindtap="NavChange" data-cur="shuichan">
+    <view class='cuIcon-cu-image'>
+      <image src="../../static/images/icon_shuichan{{PageCur=='shuichan'?'_selected':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='shuichan'?'text-selected':'text-normal'}}">水产</view>
+  </view>
+  <!-- 肉禽 -->
+  <view class="action" bindtap="NavChange" data-cur="rouqin">
+    <view class='cuIcon-cu-image'>
+      <image src="../../static/images/icon_rouqinyouxuan{{PageCur=='rouqin'?'_selected':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='rouqin'?'text-selected':'text-normal'}}">肉禽</view>
+  </view>
+
+    <!-- 爆款 -->
+  <view class="action" bindtap="NavChange" data-cur="baokuan">
+    <view class='cuIcon-cu-image'>
+      <image src="../../static/images/icon_baokuan{{PageCur=='baokuan'?'_selected':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='baokuan'?'text-selected':'text-normal'}}">爆款</view>
+  </view>
+
+  <!-- 果蔬 -->
+  <view class="action" bindtap="NavChange" data-cur="guoshu">
+    <view class='cuIcon-cu-image'>
+       <image src="../../static/images/icon_guoshu{{PageCur=='guoshu'?'_selected':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='guoshu'?'text-selected':'text-normal'}}">果蔬</view>
+  </view>
+  <!-- 速食 -->
+  <view class="action" bindtap="NavChange" data-cur="sushi">
+    <view class='cuIcon-cu-image'>
+       <image src="../../static/images/icon_sushi{{PageCur=='sushi'?'_selected':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='sushi'?'text-selected':'text-normal'}}">速食</view>
+  </view>
+</view>

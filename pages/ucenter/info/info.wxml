@@ -1,0 +1,52 @@
+<p-nav back title="个人信息" />
+<view style='margin-top:{{navH}}px'>
+  <view class="cu-bar bg-white solid-bottom margin-top avatar-item">
+    <view class="action">
+      头像
+    </view>
+    <view class="action">
+      <view class="cu-avatar round lg" style="background-image:url({{userInfo.avatarUrl}});"></view>
+    </view>
+  </view>
+
+
+  <view class="cu-list menu {{menuBorder?'sm-border':''}} {{menuCard?'card-menu margin-top':''}}">
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="text-black">名字</text>
+      </view>
+      <view class="action">
+        <text class="text-gray text-sm">{{userInfo.nickName}}</text>
+      </view>
+    </view>
+
+
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="text-black">性别</text>
+      </view>
+      <view class="action">
+        <text class="text-gray text-sm">{{userInfo.gender===1?'男':'女'}}</text>
+      </view>
+    </view>
+
+
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="text-black">地区</text>
+      </view>
+      <view class="action">
+        <text class="text-gray text-sm">{{userInfo.province}}</text>
+      </view>
+    </view>
+
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="text-black">手机号码</text>
+      </view>
+      <view class="action">
+        <text class="text-gray text-sm">{{userInfo.phone}}</text>
+      </view>
+    </view>
+  </view>
+</view>

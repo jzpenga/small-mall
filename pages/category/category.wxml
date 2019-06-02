@@ -1,0 +1,22 @@
+<p-nav title="分类" />
+<view style="margin-top:{{navH}}px;height:100%">
+  <navigator class='search'  url='/pages/search/search'>
+    <van-search shape="round" placeholder="商品搜索" />
+  </navigator>
+  <view class="catalog">
+    <scroll-view class="nav" scroll-y="true">
+        <view class="item {{ currentCategory.id == item.id ? 'active' : ''}}" wx:for="{{navList}}"  data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCate">{{item.name}}</view>
+    </scroll-view>
+    <scroll-view class="cate" scroll-y="true">
+        <view class='product-item' wx:for="{{productList}}" wx:key="{{item.id}}">
+          <navigator url='/pages/goods/goods?id={{item.id}}'>
+            <van-card desc-class="desc" num="2"  price="{{item.price}}" desc="{{item.subtitle}}" title="{{item.name}}" thumb="{{ item.mainImage }}">
+              <view slot="footer">
+                <van-button plain hairline round type="danger" size="small" >加入购物车</van-button>
+              </view>
+            </van-card>
+          </navigator>
+        </view>
+    </scroll-view>
+  </view>
+</view>

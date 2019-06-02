@@ -1,0 +1,104 @@
+page{
+  min-height: 100%;
+  background-color: #fff;
+}
+
+.search{
+  position: relative
+}
+
+.search .item{
+  display: block;
+  height: 72rpx;
+  padding: 0 16rpx;
+  line-height: 72rpx;
+  border-bottom: 0.5px solid #e6e1e193;
+}
+
+.no-search{
+    height: auto;
+    overflow: hidden;
+}
+
+.serach-keywords{
+    background: #fff;
+    width: 750rpx;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 20rpx;
+}
+
+.serach-keywords .h{
+    padding: 0 31.25rpx;
+    height: 93rpx;
+    line-height: 93rpx;
+    width: 100%;
+    color: #999;
+    font-size: 29rpx;
+}
+
+.serach-keywords .title{
+    display: block;
+    width: 120rpx;
+    float: left;
+}
+
+.serach-keywords .icon{
+    margin-top: 19rpx;
+    float: right;
+    display: block;
+    margin-left: 511rpx;
+    height: 55rpx;
+    width: 55rpx;
+}
+
+.serach-keywords .b{
+    width: 750rpx;
+    height: auto;
+    overflow: hidden;
+    padding-left: 31.25rpx;
+}
+
+.serach-keywords .item{
+    display: inline-block;
+    width: auto;
+    max-width: 300rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    padding:0 30rpx;
+    border: 1px solid #999;
+    margin: 0 31.25rpx 31.25rpx 0;
+    font-size: 24rpx;
+    border-radius: 24rpx;
+    overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+    color: #333;
+}
+
+.serach-keywords .item.active{
+    color: #b4282d;
+    border: 1px solid #b4282d;
+}
+
+.search-result-empty{
+    width: 100%;
+    height: 100%;
+    padding-top: 300rpx;
+}
+
+.search-result-empty .icon{
+    margin: 0 auto;
+    display: block;
+    width: 240rpx;
+    height: 240rpx;
+}
+
+.search-result-empty .text{
+    display: block;
+    width: 100%;
+    height: 40rpx;
+    font-size: 28rpx;
+    text-align: center;
+    color: #999;
+}

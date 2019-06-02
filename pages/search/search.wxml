@@ -1,0 +1,30 @@
+<p-nav back title="搜索" />
+<scroll-view style="height: 100%;" style='margin-top:{{navH}}px'>
+  <view class="search-header">
+    <view class="input-box">
+      <van-search shape="round" bind:change="onChange" bind:search="onSearch" bind:cancel="onCancel" placeholder="请输入商品名称" />
+    </view>
+  </view>
+  <view class='search' wx:if="{{  goodsList.length}}">
+    <view data-keyword="{{item}}" wx:for="{{goodsList}}" bindtap="toDetail" wx:key="{{item.id}}" hover-class="navigator-hover">
+
+      <text class='item'>{{item.name}}</text>
+
+    </view>
+  </view>
+  <view class="no-search" wx:if="{{ !goodsList.length && !keywrod}}">
+    <view class="serach-keywords search-history" wx:if="{{!keyword  && historyKeyword.length}}">
+      <view class="h">
+        <text class="title">历史记录</text>
+        <image class="icon" bindtap="clearHistory" src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/del1-93f0a4add4.png"></image>
+      </view>
+      <view class="b">
+        <view class="item" bindtap="onKeywordTap" data-keyword="{{item}}" wx:for="{{historyKeyword}}" hover-class="navigator-hover">{{item}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="search-result-empty" wx:if="{{!goodsList.length && keywrod}}">
+    <image class="icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noSearchResult-7572a94f32.png"></image>
+    <text class="text">您寻找的商品还未上架</text>
+  </view>
+</scroll-view>

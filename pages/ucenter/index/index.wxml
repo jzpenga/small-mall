@@ -1,0 +1,22 @@
+<!--pages/ucenter/ucenter.wxml-->
+<p-nav back title="个人中心" />
+<view class="container" style='margin-top:{{navH}}px'>
+  <view class="profile-info">
+    <block wx:if="{{!userInfo.nickName && canIUse}}">
+        <image class="avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <button open-type="getUserInfo" bindgetuserinfo="bindUserInfo">点击获取头像和昵称</button>
+    </block>
+    <block wx:else>
+      <open-data class='avatar' type="userAvatarUrl"></open-data>
+      <open-data class='nickName' type="userNickName"></open-data>
+    </block>
+  </view>
+
+</view>
+<view class="cu-list grid col-4 no-border">
+  <view class="cu-item" wx:for="{{iconList}}" wx:key>
+    <view class='icon-{{item.icon}} text-{{item.color}}'>
+    </view>
+    <text>{{item.name}}</text>
+  </view>
+</view>

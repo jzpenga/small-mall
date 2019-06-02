@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "shuichan": "/pages/category/category",
+    "rouqin": "/pages/category/category",
+    "baokuan": "/pages/home/index/index",
+    "guoshu": "/pages/category/category",
+    "sushi": "/pages/category/category"
+  }
+}

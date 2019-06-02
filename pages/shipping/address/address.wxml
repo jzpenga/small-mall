@@ -1,0 +1,26 @@
+<p-nav back title='收货地址'/>
+<view style='margin-top:{{navH}}px'>
+    <view class="address-list" wx:if="{{ addressList.length > 0 }}">
+        <view class="item" wx:for="{{addressList}}" wx:key="{{item.id}}" bindtap="selectAddress" data-address-id="{{item.id}}">
+            <view class="l">
+                <view class="name">{{item.receiverName}}</view>
+                <view class="default" wx:if="{{item.defaultAddress===1}}">默认</view>
+            </view>
+            <view class="c">
+                <view class="mobile">{{item.receiverPhone}}</view>
+                <view class="address">{{item.receiverProvince + item.receiverCity+item.receiverDistrict+item.receiverAddress}}</view>
+            </view>
+            <view class="r">
+                <image catchtap="addressAddOrUpdate" data-address-id="{{item.id}}" class="del" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/address-edit-7fee7b0d63.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="empty-view" wx:if="{{ addressList.length <= 0 }}">
+      <image class="icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noAddress-26d570cefa.png"></image>
+      <text class="text">收货地址在哪里</text>
+    </view>
+
+    <view  class="padding flex flex-direction btn-bottom">
+  <button  bindtap="addressAddOrUpdate" data-address-id="0" class="cu-btn bg-primary margin-tb-sm lg">新建</button>
+</view>
+</view>

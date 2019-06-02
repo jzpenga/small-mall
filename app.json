@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/index/index",
+    "pages/cart/index/index",
+    "pages/ucenter/index/index",
+    "pages/ucenter/info/info",
+    "pages/goods/goods",
+    "pages/search/search",
+    "pages/category/category",
+    "pages/ucenter/orders/order",
+    "pages/ucenter/orderDetail/orderDetail",
+    "pages/shipping/checkout/checkout",
+    "pages/shipping/address/address",
+    "pages/shipping/addressAdd/addressAdd"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#d81e06",
+    "navigationBarTitleText": "小商城",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false,
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "p-nav": "/components/nav/index",
+    "van-button": "/vant-weapp/button/index",
+    "van-row": "/vant-weapp/row/index",
+    "van-col": "/vant-weapp/col/index",
+    "van-icon": "/vant-weapp/icon/index",
+    "van-search": "/vant-weapp/search/index",
+    "van-card": "/vant-weapp/card/index",
+    "van-tag": "/vant-weapp/tag/index",
+    "van-area": "/vant-weapp/area/index",
+    "van-dialog": "/vant-weapp/dialog/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}

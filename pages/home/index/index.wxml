@@ -1,0 +1,107 @@
+<!--index.wxml-->
+<p-nav menu bind:onMenuClick="toggerMenu" title="爆款" />
+
+<view class="cu-modal drawer-modal justify-start {{showMenu?'show':''}}" style="margin-top:{{navH}}px" bindtap="toggerMenu">
+  <view class="cu-dialog basis-lg" style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
+    
+    <view class="cu-list menu text-left">
+      <navigator hover-class="navigator-hover" class="cu-item arrow" url='{{item.url}}' wx:for="{{menuItemList}}" wx:key>
+        <view class="content" wx:if="{{item.name!='客服中心'}}">
+          <text class="cuIcon-{{item.icon}} lg " style='font-size:32rpx'></text>
+          <text class='name'>{{item.name}}</text>
+        </view>
+        <button class="cu-btn content" open-type="contact" wx:else>
+        <text class="cuIcon-{{item.icon}} lg" style='font-size:32rpx'></text>
+        <text class='name' style='margin-left:56rpx'>{{item.name}}</text>
+      </button>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<view style='margin-top:{{navH}}px;background:#fff'>
+  <navigator url='/pages/search/search'>
+    <van-search shape="round" placeholder="请输入搜索关键词" />
+  </navigator>
+  <swiper class="card-swiper {{DotStyle?'round-dot':'square-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="handleImgChange" indicator-color="#8799a3" indicator-active-color="#0081ff">
+    <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}" class="{{currentIndex==index?'cur':''}}">
+
+      <view class="swiper-item">
+        <image src="{{item.imageUrl}}" mode="aspectFill"></image>
+        <!-- <video src="{{item.imageUrl}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video> -->
+      </view>
+
+    </swiper-item>
+  </swiper>
+  <!-- <swiper class="banner" indicator-dots="true" autoplay="false" circular='true' bindchange="handleImgChange" interval="3000" duration="1000" previous-margin="54rpx" next-margin='54rpx'>
+    <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}">
+      <navigator url="{{item.link}}">
+        <image class="{{index==currentIndex?'big':'small'}}" id='{{item.imageUrl}}' src="{{item.imageUrl}}" background-size="cover"></image>
+      </navigator>
+    </swiper-item>
+  </swiper> -->
+  <view>
+    <view class="recommend">
+      <view class='h'>
+        <text class='t'>爆款推荐</text>
+      </view>
+      <view class='content'>
+
+        <view class='product-item' wx:for="{{hotProductList}}" wx:key="{{item.id}}">
+          <navigator url='/pages/goods/goods?id={{item.id}}'>
+            <van-card num="2" tag="{{item.label}}" price="{{item.price}}" desc="{{item.subtitle}}" title="{{item.name}}" thumb="{{ item.mainImage }}">
+              <view slot="footer">
+                <van-button plain hairline round type="danger" size="small">加入购物车</van-button>
+              </view>
+            </van-card>
+          </navigator>
+        </view>
+
+
+
+      </view>
+    </view>
+
+    <view class="recommend">
+      <view class='h'>
+        <text class='t'>新品上市</text>
+      </view>
+      <view class='content'>
+
+        <scroll-view scroll-x="true" class="new-list">
+          <view class="product-item" wx:for="{{newProductList}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.id}}">
+            <navigator url="../topicDetail/topicDetail?id={{item.id}}">
+              <image class='image round-image' src="{{item.mainImage}}" background-size="cover"></image>
+              <van-tag custom-class="label" mark type="danger">{{item.label}}</van-tag>
+              <view>
+                <text class='name'>{{item.name}}</text>
+                <text class='price'>￥{{item.price}}</text>
+              </view>
+            </navigator>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='home-container'>
+    <view class='product-item' wx:for="{{productList}}" wx:key="{{item.id}}">
+      <navigator url='/pages/goods/goods?id={{item.id}}'>
+        <image mode='widthFix' class='image round-image' src="{{item.mainImage}}"></image>
+        <text class='name'>{{item.name}}</text>
+        <text class='desc'>{{item.subtitle}}</text>
+        <view class='price-area'>
+          <text class='price-label'>促销价</text>
+          <text class='price'>￥{{item.price}}</text>
+        </view>
+        <view class='bottom-area'>
+          <view class='sales-area'>
+            <van-icon custom-class="sales-icon" color='#999' name="cart" />
+            <text class='sales'>已售300件</text>
+          </view>
+          <van-button plain custom-class='btn-plain' size="small">抢购</van-button>
+        </view>
+        <view class='line'></view>
+      </navigator>
+    </view>
+  </view> -->
+</view>

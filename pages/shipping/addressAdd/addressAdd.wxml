@@ -1,0 +1,39 @@
+<p-nav back title='编辑' />
+<view class="add-address" style='margin-top:{{navH}}px'>
+  <view class="add-form">
+    <view class="form-item">
+      <input class="input" bindinput="bindinputName" placeholder="姓名" value="{{address.receiverName}}" auto-focus/>
+    </view>
+    <view class="form-item">
+      <input class="input" bindinput="bindinputMobile" value="{{address.receiverPhone}}" placeholder="手机号码" />
+    </view>
+    <view class="form-item">
+      <input class="input" value="{{address.receiverProvince + address.receiverCity+address.receiverDistrict}}" disabled="true" bindtap="chooseRegion" placeholder="省份、城市、区县" />
+    </view>
+    <view class="form-item">
+      <input class="input" bindinput="bindinputAddress" value="{{address.receiverAddress}}" placeholder="详细地址, 如街道、楼盘号等" />
+    </view>
+  
+
+
+      <!-- <text class="cuIcon-round{{address.defaultAddress == 1 ? 'checkfill' : ''}} lg checkbox {{address.defaultAddress == 1 ? 'selected' : ''}} default-input" style='font-size:36rpx;' bindtap="bindIsDefault" data-item-index="{{index}}">默认地址</text> -->
+
+      <view class="cu-form-group">
+        <view class="title">默认地址</view>
+        <checkbox bindtap="bindIsDefault" class="round primary" checked="{{address.defaultAddress == 1 ? true : false}}"></checkbox>
+      </view>
+<view wx:if="{{addressId > 0}}" class="cu-form-group margin-top">
+		<view bindtap='deleteAddress' class="title text-primary">删除地址</view>
+	</view>
+    
+  </view>
+
+  <van-area wx:if="{{openSelectRegion}}" class="region-select" area-list="{{ areaList }}" value="{{address.addressCode}}" bind:confirm="doneSelectRegion" bind:cancel="cancelSelectRegion" />
+
+
+  <view class="padding flex flex-direction btn-bottom">
+    <button bindtap='saveAddress' class="cu-btn bg-primary margin-tb-sm lg">保存</button>
+  </view>
+
+<van-dialog id="van-dialog" />
+</view>
