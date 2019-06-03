@@ -18,14 +18,15 @@ Component({
   data: {
     scrollTop: 0,
     navH: app.globalData.navHeight,
-    navList: [],
+    navList: [{ id: -1, name: '默认' }],
     categoryList: [],
     currentCategory: {},
     productList: [],
     scrollLeft: 0,
-    scrollTop: 0,
     goodsCount: 0,
-    scrollHeight: 0
+    scrollHeight: 0,
+    pageNo:0,
+    totalPages:0
   },
   attached: function () {
     this.getCatalog();
@@ -41,7 +42,7 @@ Component({
       http.get(`${api.CategoryList}?id=${this.properties.categoryParentId}`).then(function (res) {
         if (res.responseCode === 200) {
           that.setData({
-            navList: [{ id: -1, name: '默认' }, ...res.data],
+            navList: [...that.data.navList, ...res.data],
             currentCategory: that.data.navList[0]
           });
           wx.hideLoading();
@@ -94,9 +95,14 @@ Component({
     onRefresh() {
       //console.log('onRefresh')
       this.setData({
+        navList: [{ id: -1, name: '默认' }],
+        categoryList: [],
+        currentCategory: {},
         productList: [],
-        pageNo: 0,
-        totalPages: 0
+        scrollLeft: 0,
+        scrollTop: 0,
+        goodsCount: 0,
+        scrollHeight: 0
       });
       this.getCatalog();
       this.getProductList(0, '', this.properties.categoryParentId);
