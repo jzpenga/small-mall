@@ -108,7 +108,7 @@ Page({
     http.post(`${api.OrderSubmit}`,param).then(function (res) {
       if (res.responseCode === 200) {
         wx.redirectTo({
-            url: '/pages/orders/order'
+            url: '/pages/ucenter/orders/order'
         });
       }
       wx.hideLoading();

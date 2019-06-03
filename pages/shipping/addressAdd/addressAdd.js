@@ -1,7 +1,7 @@
 var util = require('../../../utils/util.js');
 var api = require('../../../config/api.js');
 var area = require('../../../config/area.js');
-import Dialog from '../../../vant-weapp/dialog/dialog';
+import Dialog from '../../../components/vant-weapp/dialog/dialog';
 import http from '@chunpu/http'
 var app = getApp();
 Page({

@@ -24,15 +24,15 @@
   },
   "usingComponents": {
     "p-nav": "/components/nav/index",
-    "van-button": "/vant-weapp/button/index",
-    "van-row": "/vant-weapp/row/index",
-    "van-col": "/vant-weapp/col/index",
-    "van-icon": "/vant-weapp/icon/index",
-    "van-search": "/vant-weapp/search/index",
-    "van-card": "/vant-weapp/card/index",
-    "van-tag": "/vant-weapp/tag/index",
-    "van-area": "/vant-weapp/area/index",
-    "van-dialog": "/vant-weapp/dialog/index"
+    "van-button": "/components/vant-weapp/button/index",
+    "van-row": "/components/vant-weapp/row/index",
+    "van-col": "/components/vant-weapp/col/index",
+    "van-icon": "/components/vant-weapp/icon/index",
+    "van-search": "/components/vant-weapp/search/index",
+    "van-card": "/components/vant-weapp/card/index",
+    "van-tag": "/components/vant-weapp/tag/index",
+    "van-area": "/components/vant-weapp/area/index",
+    "van-dialog": "/components/vant-weapp/dialog/index"
   },
   "sitemapLocation": "sitemap.json"
 }
