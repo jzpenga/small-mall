@@ -1,6 +1,8 @@
 var util = require('../../utils/util.js');
 var api = require('../../config/api.js');
-import http from '@chunpu/http'
+import http from '@chunpu/http';
+import { $stopWuxRefresher, $stopWuxLoader } from '../../components/vux-weapp/index';
+
 const app = getApp();
 Component({
   options: {
@@ -14,8 +16,9 @@ Component({
     }
   },
   data: {
+    scrollTop: 0,
     navH: app.globalData.navHeight,
-    navList: [{id:-1,name:'默认'}],
+    navList: [],
     categoryList: [],
     currentCategory: {},
     productList: [],
@@ -38,7 +41,7 @@ Component({
       http.get(`${api.CategoryList}?id=${this.properties.categoryParentId}`).then(function (res) {
         if (res.responseCode === 200) {
           that.setData({
-            navList: [...that.data.navList, ...res.data],
+            navList: [{ id: -1, name: '默认' }, ...res.data],
             currentCategory: that.data.navList[0]
           });
           wx.hideLoading();
@@ -79,6 +82,30 @@ Component({
       })
       this.getProductList(0, id === -1 ? '' : id, this.properties.categoryParentId);
       //this.getCurrentCategory(event.currentTarget.dataset.id);
+    },
+    onPageScroll(e) {
+      this.setData({
+        scrollTop: e.scrollTop
+      })
+    },
+    onPulling() {
+      console.log('onPulling')
+    },
+    onRefresh() {
+      //console.log('onRefresh')
+      this.setData({
+        productList: [],
+        pageNo: 0,
+        totalPages: 0
+      });
+      this.getCatalog();
+      this.getProductList(0, '', this.properties.categoryParentId);
+      setTimeout(() => {
+        $stopWuxRefresher('#category')
+      }, 2000)
+    },
+    onLoadmore() {
+      console.log('onLoadmore')
     }
   }
   

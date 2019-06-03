@@ -1,6 +1,7 @@
 //index.js
 const util = require('../../../utils/util.js');
 const api = require('../../../config/api.js');
+import { $stopWuxRefresher, $stopWuxLoader } from '../../../components/vux-weapp/index';
 import http from '@chunpu/http'
 //获取应用实例
 const app = getApp()
@@ -9,6 +10,7 @@ Component({
     addGlobalClass: true,
   },
   data: {
+    scrollTop: 0,
     navH: app.globalData.navHeight,
     banner: [],
     productList:[],
@@ -98,6 +100,26 @@ Component({
       this.setData({
         showMenu: !this.data.showMenu
       })
+    },
+    onPageScroll(e) {
+      this.setData({
+        scrollTop: e.scrollTop
+      })
+    },
+    onPulling() {
+      console.log('onPulling')
+    },
+    onRefresh() {
+      //console.log('onRefresh')
+      this.getBannerList();
+      this.getProductHotList();
+      this.getProductNewList();
+      setTimeout(() => {
+        $stopWuxRefresher('#baokuan')      
+      }, 2000)
+    },
+    onLoadmore() {
+      console.log('onLoadmore')
     }
   },
   

@@ -1,4 +1,5 @@
 <p-nav title="分类" />
+<wux-refresher id="wux-refresher" bind:pulling="onPulling" bind:refresh="onRefresh" bind:loadmore="onLoadmore" scrollTop="{{scrollTop}}">
 <view style="margin-top:{{navH}}px;height:100%">
   <navigator class='search'  url='/pages/search/search'>
     <van-search shape="round" placeholder="商品搜索" />
@@ -20,3 +21,4 @@
     </scroll-view>
   </view>
 </view>
+</wux-refresher>

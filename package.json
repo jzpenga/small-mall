@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vant-weapp": "^0.5.12",
     "@chunpu/http": "^1.0.2",
     "min-ready": "^2.3.0"
   }

@@ -4,11 +4,11 @@ var __DEFINE__ = function(modId, func, req) { var m = { exports: {} }; __MODS__[
 var __REQUIRE__ = function(modId, source) { if(!__MODS__[modId]) return require(source); if(!__MODS__[modId].status) { var m = { exports: {} }; __MODS__[modId].status = 1; __MODS__[modId].func(__MODS__[modId].req, m, m.exports); if(typeof m.exports === "object") { Object.keys(m.exports).forEach(function(k) { __MODS__[modId].m.exports[k] = m.exports[k]; }); if(m.exports.__esModule) Object.defineProperty(__MODS__[modId].m.exports, "__esModule", { value: true }); } else { __MODS__[modId].m.exports = m.exports; } } return __MODS__[modId].m.exports; };
 var __REQUIRE_WILDCARD__ = function(obj) { if(obj && obj.__esModule) { return obj; } else { var newObj = {}; if(obj != null) { for(var k in obj) { if (Object.prototype.hasOwnProperty.call(obj, k)) newObj[k] = obj[k]; } } newObj.default = obj; return newObj; } };
 var __REQUIRE_DEFAULT__ = function(obj) { return obj && obj.__esModule ? obj.default : obj; };
-__DEFINE__(1559476122036, function(require, module, exports) {
+__DEFINE__(1559549087452, function(require, module, exports) {
 module.exports = require('./src/index.js')
 
-}, function(modId) {var map = {"./src/index.js":1559476122037}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1559476122037, function(require, module, exports) {
+}, function(modId) {var map = {"./src/index.js":1559549087453}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1559549087453, function(require, module, exports) {
 const _ = require('min-util')
 const HttpClient = require('./http')
 
@@ -28,8 +28,8 @@ for (var key in instance) {
   http[key] = val
 }
 
-}, function(modId) { var map = {"./http":1559476122038}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1559476122038, function(require, module, exports) {
+}, function(modId) { var map = {"./http":1559549087454}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1559549087454, function(require, module, exports) {
 const _ = require('min-util')
 const Url = require('min-url')
 const qs = require('min-qs')
@@ -208,8 +208,8 @@ _.each(dataMethods, method => {
 
 module.exports = exports = HttpClient
 
-}, function(modId) { var map = {"./queue":1559476122039,"./utils":1559476122040,"./adapters":1559476122041}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1559476122039, function(require, module, exports) {
+}, function(modId) { var map = {"./queue":1559549087455,"./utils":1559549087456,"./adapters":1559549087457}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1559549087455, function(require, module, exports) {
 const _ = require('min-util')
 
 module.exports = Queue
@@ -231,7 +231,7 @@ _.extend(Queue.prototype, {
 })
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1559476122040, function(require, module, exports) {
+__DEFINE__(1559549087456, function(require, module, exports) {
 const _ = require('min-util')
 
 const CONTENT_TYPE_KEY = 'Content-Type'
@@ -298,7 +298,7 @@ exports.clearTimer = clearTimer
 exports.createError = createError
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1559476122041, function(require, module, exports) {
+__DEFINE__(1559549087457, function(require, module, exports) {
 const wx = require('./wx')
 const quickapp = require('./quickapp')
 const axios = require('./axios')
@@ -311,8 +311,8 @@ exports.axios = axios
 exports.jquery = jquery
 exports.xhr = xhr
 
-}, function(modId) { var map = {"./wx":1559476122042,"./quickapp":1559476122043,"./axios":1559476122044,"./jquery":1559476122045,"./xhr":1559476122046}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1559476122042, function(require, module, exports) {
+}, function(modId) { var map = {"./wx":1559549087458,"./quickapp":1559549087459,"./axios":1559549087460,"./jquery":1559549087461,"./xhr":1559549087462}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1559549087458, function(require, module, exports) {
 const utils = require('../utils')
 
 module.exports = function(config) {
@@ -353,8 +353,8 @@ module.exports = function(config) {
   }
 }
 
-}, function(modId) { var map = {"../utils":1559476122040}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1559476122043, function(require, module, exports) {
+}, function(modId) { var map = {"../utils":1559549087456}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1559549087459, function(require, module, exports) {
 const utils = require('../utils')
 
 module.exports = function(config) {
@@ -391,8 +391,8 @@ module.exports = function(config) {
   }
 }
 
-}, function(modId) { var map = {"../utils":1559476122040}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1559476122044, function(require, module, exports) {
+}, function(modId) { var map = {"../utils":1559549087456}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1559549087460, function(require, module, exports) {
 module.exports = function(config) {
   var defaults = this.defaults
   if (defaults && defaults.axios) {
@@ -404,7 +404,7 @@ module.exports = function(config) {
 }
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1559476122045, function(require, module, exports) {
+__DEFINE__(1559549087461, function(require, module, exports) {
 const utils = require('../utils')
 
 module.exports = function(config) {
@@ -437,8 +437,8 @@ module.exports = function(config) {
   }
 }
 
-}, function(modId) { var map = {"../utils":1559476122040}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1559476122046, function(require, module, exports) {
+}, function(modId) { var map = {"../utils":1559549087456}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1559549087462, function(require, module, exports) {
 const utils = require('../utils')
 
 module.exports = function(config) {
@@ -472,7 +472,7 @@ module.exports = function(config) {
   })
 }
 
-}, function(modId) { var map = {"../utils":1559476122040}; return __REQUIRE__(map[modId], modId); })
-return __REQUIRE__(1559476122036);
+}, function(modId) { var map = {"../utils":1559549087456}; return __REQUIRE__(map[modId], modId); })
+return __REQUIRE__(1559549087452);
 })()
 //# sourceMappingURL=index.js.map
