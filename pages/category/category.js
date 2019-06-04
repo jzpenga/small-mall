@@ -107,7 +107,7 @@ Component({
       this.getCatalog();
       this.getProductList(0, '', this.properties.categoryParentId);
       setTimeout(() => {
-        $stopWuxRefresher('#category')
+        $stopWuxRefresher('#category-' + this.properties.categoryParentId)
       }, 2000)
     },
     onLoadmore() {
