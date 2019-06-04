@@ -1,0 +1,17 @@
+/* pages/ucenter/ucenter.wxss */
+.auth-text{
+  padding: 36px 24px;
+}
+.auth-text .t{
+  font-weight: 500;
+  font-size: 36rpx;
+  color: #333;
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.auth-text .c{
+  display: block;
+  text-align: center;
+}
