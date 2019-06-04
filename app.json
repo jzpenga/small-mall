@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/splash/splash",
     "pages/index/index",
     "pages/home/index/index",
     "pages/cart/index/index",
@@ -13,6 +14,7 @@
     "pages/shipping/checkout/checkout",
     "pages/shipping/address/address",
     "pages/shipping/addressAdd/addressAdd"
+   
   ],
   "window": {
     "backgroundTextStyle": "dark",
