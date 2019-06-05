@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <p-nav menu bind:onMenuClick="toggerMenu" title="爆款" />
 <wux-refresher id="wux-refresher" bind:pulling="onPulling" bind:refresh="onRefresh" bind:loadmore="onLoadmore" scrollTop="{{scrollTop}}">
-<view class="cu-modal drawer-modal justify-start {{showMenu?'show':''}}" bindtap="toggerMenu">
+<view  class="cu-modal drawer-modal justify-start {{showMenu?'show':''}}" bindtap="toggerMenu">
   <view class="cu-dialog basis-lg" style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
     
     <view class="cu-list menu text-left">
@@ -49,9 +49,9 @@
 
         <view class='product-item' wx:for="{{hotProductList}}" wx:key="{{item.id}}">
           <navigator url='/pages/goods/goods?id={{item.id}}'>
-            <van-card num="2" tag="{{item.label}}" price="{{item.price}}" desc="{{item.subtitle}}" title="{{item.name}}" thumb="{{ item.mainImage }}">
+            <van-card  tag="{{item.label}}" price="{{item.price}}" desc="{{item.subtitle}}" title="{{item.name}}" thumb="{{ item.mainImage }}">
               <view slot="footer">
-                <van-button plain hairline round type="danger" size="small">加入购物车</van-button>
+                <van-button catchtap='addToCart' data-id="{{item.id}}" plain hairline round type="danger" size="small">加入购物车</van-button>
               </view>
             </van-card>
           </navigator>
@@ -70,7 +70,7 @@
 
         <scroll-view scroll-x="true" class="new-list">
           <view class="product-item" wx:for="{{newProductList}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.id}}">
-            <navigator url="../topicDetail/topicDetail?id={{item.id}}">
+            <navigator url="/pages/goods/goods?id={{item.id}}">
               <image class='image round-image' src="{{item.mainImage}}" background-size="cover"></image>
               <van-tag custom-class="label" mark type="danger">{{item.label}}</van-tag>
               <view>

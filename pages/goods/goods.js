@@ -41,6 +41,7 @@ Page({
     // });
 
   },
+
   //获取选中的规格信息
   getCheckedSpecValue: function () {
     let checkedValues = [];
@@ -148,6 +149,7 @@ Page({
       openAttr: false,
     });
   },
+  
   addCannelCollect: function () {
     let that = this;
     //添加或是取消收藏
@@ -173,11 +175,19 @@ Page({
     //       });
     //     }
     //   });
+  }, 
+  toHome: function () {
+    wx.reLaunch({
+      url: '../index/index'
+    })
+  },
+  shareGood: function () {
+
   },
   openCartPage: function () {
-    wx.switchTab({
-      url: '/pages/index/index',
-    });
+    wx.navigateTo({
+      url: '../cart/index/index',
+    })
   },
   addToCart: function () {
     var that = this;

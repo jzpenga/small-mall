@@ -50,6 +50,23 @@ Component({
       });
 
     },
+    addToCart:function(e){
+
+      http.post(api.AddToCart, { productId: e.target.dataset.id, quantity: 1 }).then((res) => {
+        let _res = res;
+        if (_res.responseCode == 200) {
+          wx.showToast({
+            title: '添加成功'
+          });
+        } else {
+          wx.showToast({
+            image: '/static/images/icon_error.png',
+            title: _res.responseMsg,
+            mask: true
+          });
+        }
+      })
+    },
     getProductList: function (pageNo, categoryId, categoryParentId) {
       let that = this;
       const param = {

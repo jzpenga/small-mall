@@ -69,15 +69,22 @@
   </view>
 </view>
 <view class="bottom-btn">
-  <view class="l l-collect" bindtap="addCannelCollect">
-    <image class="icon" src="{{ collectBackImage }}"></image>
+  <view class="l l-collect" bindtap="toHome">
+    <!-- <image class="icon" src="{{ collectBackImage }}"></image> -->
+      <text class="cuIcon-home lg text-gray" style='font-size:48rpx;color:#333'></text>
+  </view>
+   <view class="l l-collect" bindtap="shareGood">
+    <!-- <image class="icon" src="{{ collectBackImage }}"></image> -->
+      <text class="cuIcon-share lg text-gray" style='font-size:48rpx;color:#333'></text>
   </view>
   <view class="l l-cart">
-    <view class="box">
+    <view class="box" bindtap="openCartPage">
       <text class="cart-count">{{cartGoodsCount}}</text>
-      <image bindtap="openCartPage" class="icon" src="/static/images/ic_menu_shoping_nor.png"></image>
+      <!-- <image bindtap="openCartPage" class="icon" src="/static/images/ic_menu_shoping_nor.png"></image> -->
+      <text class="cuIcon-cart lg " style='font-size:48rpx;color:#333'></text>
     </view>
   </view>
-  <view class="c">立即购买</view>
+ 
+  <!-- <view class="c">立即购买</view> -->
   <view class="r" bindtap="addToCart">加入购物车</view>
 </view>

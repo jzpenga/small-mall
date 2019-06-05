@@ -11,9 +11,9 @@
     <scroll-view class="cate" scroll-y="true">
         <view class='product-item' wx:for="{{productList}}" wx:key="{{item.id}}">
           <navigator url='/pages/goods/goods?id={{item.id}}'>
-            <van-card desc-class="desc" num="2"  price="{{item.price}}" desc="{{item.subtitle}}" title="{{item.name}}" thumb="{{ item.mainImage }}">
+            <van-card desc-class="desc"   price="{{item.price}}" desc="{{item.subtitle}}" title="{{item.name}}" thumb="{{ item.mainImage }}">
               <view slot="footer">
-                <van-button plain hairline round type="danger" size="small" >加入购物车</van-button>
+                <van-button catchtap='addToCart' data-id="{{item.id}}" plain hairline round type="danger" size="small" >加入购物车</van-button>
               </view>
             </van-card>
           </navigator>

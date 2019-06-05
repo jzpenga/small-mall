@@ -47,6 +47,24 @@ Component({
         currentIndex: e.detail.current
       })
     },
+    addToCart:function(e){
+      
+
+      http.post(api.AddToCart, { productId: e.target.dataset.id, quantity: 1 }).then((res) => {
+        let _res = res;
+        if (_res.responseCode == 200) {
+          wx.showToast({
+            title: '添加成功'
+          });
+        } else {
+          wx.showToast({
+            image: '/static/images/icon_error.png',
+            title: _res.responseMsg,
+            mask: true
+          });
+        }
+      })
+    },
     getProductList: function (pageNo) {
       let that = this;
       http.get(`${api.ProductListUrl}?pageNo=${pageNo}&pageSize=${5}`).then(function (res) {
@@ -94,8 +112,7 @@ Component({
       this.setData({
         showMenu: false
       })
-    }
-    ,
+    },
     toggerMenu(e) {
       this.setData({
         showMenu: !this.data.showMenu

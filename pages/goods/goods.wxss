@@ -555,8 +555,8 @@
 
 .bottom-btn .l.l-cart .box {
   position: relative;
-  height: 60rpx;
-  width: 60rpx;
+  height: 48rpx;
+  width: 48rpx;
 }
 
 .bottom-btn .l.l-cart .cart-count {

@@ -8,7 +8,7 @@
 <baokuan id="baokuan"  style="display:{{PageCur=='baokuan'?'block':'none'}}"></baokuan>
 <guoshu id="category-1" categoryParentId='1'  style="display:{{PageCur=='guoshu'?'block':'none'}}"></guoshu>
 <sushi id="category-7" categoryParentId='7' style="display:{{PageCur=='sushi'?'block':'none'}}"></sushi>
-<view class="cu-bar tabbar bg-white shadow foot">
+<view class="cu-bar tabbar bg-white shadow foot" style='margin-top:100px'>
 <!-- 水产 -->
   <view class="action" bindtap="NavChange" data-cur="shuichan">
     <view class='cuIcon-cu-image'>

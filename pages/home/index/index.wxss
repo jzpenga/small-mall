@@ -54,10 +54,9 @@
 }
 
 .new-list {
-  height: 300rpx;
+  height: 450rpx;
   width: 100%;
   margin-right: 20px;
-  margin-bottom: 100px;
   white-space: nowrap;
 }
 
@@ -109,25 +108,7 @@ line-height: 50px;
 transform: translateX(-50%)
 }
 
-.kefu{
-position:relative;
-display:block;
-margin-left:auto;
-margin-right:auto;
-padding-left:14px;
-padding-right:14px;
-box-sizing:border-box;
-font-size:18px;
-text-align:center;
-text-decoration:none;
-line-height:2.55555556;
-border-radius:5px;
--webkit-tap-highlight-color:transparent;
-overflow:hidden;
-color:#000000;
-background-color:#fff;
 
-}
 /* 
 .product-item .name {
   color: #333;
