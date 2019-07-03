@@ -22,9 +22,15 @@ Page({
     let that = this;
     http.get(`${api.ProductDetailUrl}/${that.data.id}`).then(function (res) {
         that.setData({
-          goods: res.data,
-          gallery: res.data.subImages,
+          goods: res.data
         });
+      if (res.data.subImages){
+        const sub = res.data.subImages.substring(0, res.data.subImages.length-1)
+        that.setData({
+          goods: res.data,
+          gallery: sub.split(',')
+        });
+      }
       WxParse.wxParse('goodsDetail', 'html', res.data.detail, that);
         //that.getGoodsRelated();
     });

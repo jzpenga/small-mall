@@ -1,4 +1,4 @@
-const ApiRootUrl = 'http://39.98.40.7:8010/mall';
+const ApiRootUrl = 'http://39.100.136.110:8010/mall';
 module.exports = {  
   ApiRootUrl: ApiRootUrl,
   ProductHotList: '/app/product/list/hot', //爆款商品列表
